@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/bg_gradient"
+    tools:context=".OCEXActivity">
+    <RelativeLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true">
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@drawable/round_bg"
+            android:padding="15dp"
+            android:text="Interview Skills"
+            android:id="@+id/interview_s"
+            android:layout_centerHorizontal="true"
+            android:layout_marginVertical="25dp"/>
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@drawable/round_bg"
+            android:padding="15dp"
+            android:text="Exam"
+            android:id="@+id/exam"
+            android:layout_centerHorizontal="true"
+            android:layout_below="@+id/interview_s"
+            android:layout_marginVertical="25dp"/>
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@drawable/round_bg"
+            android:padding="15dp"
+            android:id="@+id/interpersonal_s"
+            android:layout_centerHorizontal="true"
+            android:layout_below="@+id/exam"
+            android:text="Interpersonal Skills"
+            android:layout_marginVertical="25dp"/>
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@drawable/round_bg"
+            android:padding="15dp"
+            android:layout_centerHorizontal="true"
+            android:id="@+id/casep"
+            android:layout_below="@+id/interpersonal_s"
+            android:text="Case Presentation"
+            android:layout_marginVertical="25dp"/>
+    </RelativeLayout>
+
+</RelativeLayout>

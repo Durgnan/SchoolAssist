@@ -1,0 +1,142 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:background="@drawable/bg_gradient"
+    android:layout_height="match_parent"
+    tools:context=".CasePresentation">
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="50dp"
+                android:layout_marginBottom="25dp"
+
+                android:orientation="vertical">
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:text="Concise/Clarity"
+                    android:layout_gravity="center"
+                    android:textSize="30dp"/>
+                <EditText
+                    android:layout_width="150sp"
+                    android:layout_gravity="center"
+
+                    android:layout_height="wrap_content"
+                    android:id="@+id/concise"/>
+            </LinearLayout>
+            <LinearLayout
+                android:layout_marginVertical="25dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_gravity="center"
+                    android:text="Pertinent Facts"
+                    android:textSize="30dp"/>
+                <EditText
+                    android:layout_width="150sp"
+                    android:layout_gravity="center"
+                    android:id="@+id/pertinentf"
+                    android:layout_height="wrap_content"
+                    />
+
+            </LinearLayout>
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginVertical="25dp"
+                android:orientation="vertical">
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:text="Pertinent Positives and Negatives"
+                    android:textAlignment="center"
+                    android:layout_gravity="center"
+                    android:textSize="30dp"/>
+                <EditText
+                    android:layout_width="150sp"
+                    android:layout_gravity="center"
+                    android:id="@+id/pertinentpn"
+                    android:layout_height="wrap_content"
+                    />
+            </LinearLayout>
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_marginVertical="25dp"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:text="Differential Diagnosis"
+                    android:layout_gravity="center"
+                    android:textSize="30dp"/>
+                <EditText
+                    android:layout_width="150sp"
+                    android:layout_gravity="center"
+                    android:id="@+id/differential"
+                    android:layout_height="wrap_content"
+                    />
+            </LinearLayout>
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginVertical="25dp"
+                android:orientation="vertical">
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:text="Appropriate Plan"
+                    android:layout_gravity="center"
+                    android:textSize="30dp"/>
+                <EditText
+                    android:layout_width="150sp"
+                    android:layout_gravity="center"
+                    android:id="@+id/appropriate"
+                    android:layout_height="wrap_content"
+                    />
+
+            </LinearLayout>
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:layout_marginVertical="25dp">
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_gravity="center"
+                    android:textAlignment="center"
+                    android:text="Response to Attending"
+                    android:textSize="30dp"/>
+                <EditText
+                    android:layout_width="150sp"
+                    android:layout_gravity="center"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/response"
+                    />
+            </LinearLayout>
+            <Button
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@drawable/round_bg"
+                android:layout_gravity="center"
+                android:id="@+id/submit_report2"
+                android:text="Submit"
+                android:padding="20dp"/>
+        </LinearLayout>
+    </ScrollView>
+
+
+</RelativeLayout>
