@@ -63,7 +63,7 @@ public class MainActivity extends AppCompatActivity {
                         else if(userType.equals("Teacher"))
                         {
                             Toast.makeText(getApplicationContext(),"Login Successfull",Toast.LENGTH_SHORT).show();
-                            startActivity(new Intent(MainActivity.this,TeacherActivity.class));
+                            startActivity(new Intent(MainActivity.this,TeacherRoot.class));
                             finish();
                         }
                     }

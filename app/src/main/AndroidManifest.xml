@@ -10,7 +10,9 @@
         android:roundIcon="@drawable/logo"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".Exam"></activity>
+        <activity android:name=".Teacher1Activity"></activity>
+        <activity android:name=".TeacherRoot" />
+        <activity android:name=".Exam" />
         <activity android:name=".CasePresentation" />
         <activity android:name=".Interpersonal" />
         <activity android:name=".Interview" />

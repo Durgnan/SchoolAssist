@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/bg_gradient"
+    tools:context=".TeacherRoot">
+    <RelativeLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" android:layout_centerInParent="true">
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:layout_height="wrap_content" android:text="quiz"
+            android:background="@drawable/round_bg"
+            android:textSize="45dp"
+            android:id="@+id/quizb"
+            android:layout_marginBottom="100dp"
+            android:padding="25dp"/>
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="assessment"
+            android:layout_centerHorizontal="true"
+            android:id="@+id/assessb"
+            android:layout_below="@+id/quizb"
+            android:background="@drawable/round_bg"
+            android:textSize="45dp"
+            android:padding="25dp"/>
+    </RelativeLayout>
+</RelativeLayout>
