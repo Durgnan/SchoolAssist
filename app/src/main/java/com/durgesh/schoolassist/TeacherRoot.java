@@ -40,6 +40,7 @@ public class TeacherRoot extends AppCompatActivity {
     {
         bundle = getIntent().getExtras();
         quiz=findViewById(R.id.quizb);
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
         assess=findViewById(R.id.assessb);
         quiz.setOnClickListener(new View.OnClickListener() {
             @Override

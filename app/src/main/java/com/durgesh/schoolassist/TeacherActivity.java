@@ -27,7 +27,7 @@ public class TeacherActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_teacher);
         bundle = getIntent().getExtras();
-
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
         recyclerView = findViewById(R.id.teacher_recycler);
         List<StudentData> list = new ArrayList<>();
         list = getData();

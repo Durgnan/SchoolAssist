@@ -1,10 +1,13 @@
 package com.durgesh.schoolassist;
 
 import android.content.DialogInterface;
+import android.content.Intent;
 import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
+import android.view.Menu;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
@@ -32,6 +35,7 @@ public class Teacher1Activity extends AppCompatActivity {
         setContentView(R.layout.activity_teacher1);
         button = findViewById(R.id.addquestions);
         builder = new AlertDialog.Builder(this);
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
         upload=findViewById(R.id.uploadquestions);
         textView=findViewById(R.id.filename);
         textView.setText("");
@@ -132,4 +136,23 @@ public class Teacher1Activity extends AppCompatActivity {
         }
 
     }
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        getMenuInflater().inflate(R.menu.logout,menu);
+        return super.onCreateOptionsMenu(menu);
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        int id = item.getItemId();
+
+        if (id==R.id.log_out)
+        {
+            startActivity(new Intent(Teacher1Activity.this,MainActivity.class).setFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK).setFlags(Intent.FLAG_ACTIVITY_NEW_TASK));
+            finish();
+        }
+
+        return super.onOptionsItemSelected(item);
+    }
+
 }
