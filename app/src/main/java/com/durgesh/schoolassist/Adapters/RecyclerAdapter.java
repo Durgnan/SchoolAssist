@@ -39,7 +39,7 @@ public class RecyclerAdapter extends RecyclerView.Adapter<RecyclerViewHolder> {
     public void onBindViewHolder(@NonNull RecyclerViewHolder recyclerViewHolder, int i) {
         recyclerViewHolder.sname.setText(list.get(i).sname);
         recyclerViewHolder.username = list.get(i).sid;
-        String[] array = {"Select One","Rubrics","Quiz","Practicals"};
+        String[] array = {"Select One","Rubrics","Theory Rubrics","Practicals"};
         ArrayAdapter<String> adapter = new ArrayAdapter<String>(context,android.R.layout.simple_spinner_item,array);
         adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         recyclerViewHolder.spinner.setAdapter(adapter);

@@ -2,7 +2,7 @@
     <string name="app_name">SchoolAssist</string>
     <string-array name="spinner_list">
         <item>Rubrics</item>
-        <item>Quiz</item>
+        <item>Theory Practicals</item>
         <item>Practicals</item>
     </string-array>
     <integer-array name="marking">
