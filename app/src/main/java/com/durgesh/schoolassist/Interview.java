@@ -9,6 +9,7 @@ import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
+import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Spinner;
@@ -18,6 +19,9 @@ import com.parse.ParseException;
 import com.parse.ParseObject;
 import com.parse.ParseQuery;
 import com.parse.SaveCallback;
+
+import java.util.ArrayList;
+import java.util.List;
 
 public class Interview extends AppCompatActivity implements View.OnClickListener {
     Bundle bundle;
@@ -67,6 +71,7 @@ public class Interview extends AppCompatActivity implements View.OnClickListener
         input4=findViewById(R.id.diagnosis);
         input5=findViewById(R.id.plan);
         input6=findViewById(R.id.patientinteraction);
+        addItemsOnSpinner();
         button=findViewById(R.id.submit_report);
         button.setOnClickListener(this);
 
@@ -143,5 +148,19 @@ public class Interview extends AppCompatActivity implements View.OnClickListener
         //Setting the title manually
         alert.setTitle("Confirmation");
         alert.show();
+    }
+    void addItemsOnSpinner(){
+        List<String> list = new ArrayList<String>();
+        list.add("0");list.add("1");list.add("2");list.add("3");list.add("4");list.add("5");
+        ArrayAdapter<String> branchAdapter = new ArrayAdapter<String>(this,
+                android.R.layout.simple_spinner_item, list);
+        branchAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+        input1.setAdapter(branchAdapter);
+        input2.setAdapter(branchAdapter);
+        input3.setAdapter(branchAdapter);
+        input4.setAdapter(branchAdapter);
+        input5.setAdapter(branchAdapter);
+        input6.setAdapter(branchAdapter);
+
     }
 }

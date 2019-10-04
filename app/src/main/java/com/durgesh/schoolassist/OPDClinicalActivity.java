@@ -9,6 +9,7 @@ import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
+import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Spinner;
@@ -19,12 +20,16 @@ import com.parse.ParseObject;
 import com.parse.ParseQuery;
 import com.parse.SaveCallback;
 
+import java.util.ArrayList;
+import java.util.List;
+
 public class OPDClinicalActivity extends AppCompatActivity implements View.OnClickListener {
     Bundle bundle;
     String username;
     Spinner input1,input2,input3,input4,input5;
     String text1,text2,text3,text4,text5;
     Button button;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -56,6 +61,7 @@ public class OPDClinicalActivity extends AppCompatActivity implements View.OnCli
         return super.onOptionsItemSelected(item);
     }
     public void init(){
+
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
         bundle = getIntent().getExtras();
         username = bundle.getString("username");
@@ -64,6 +70,7 @@ public class OPDClinicalActivity extends AppCompatActivity implements View.OnCli
         input3=findViewById(R.id.knowledge);
         input4=findViewById(R.id.discussion);
         input5=findViewById(R.id.interaction);
+        addItemsOnSpinner();
 
         button=findViewById(R.id.submit_report4);
         button.setOnClickListener(this);
@@ -73,11 +80,11 @@ public class OPDClinicalActivity extends AppCompatActivity implements View.OnCli
 
     @Override
     public void onClick(View v) {
-        text1=input1.getSelectedItem().toString().trim();
-        text2=input2.getSelectedItem().toString().trim();
-        text3=input3.getSelectedItem().toString().trim();
-        text4=input4.getSelectedItem().toString().trim();
-        text5=input5.getSelectedItem().toString().trim();
+        text1= (String) input1.getSelectedItem();
+        text2= (String) input2.getSelectedItem();
+        text3=(String)input3.getSelectedItem();
+        text4=(String)input4.getSelectedItem();
+        text5=(String)input5.getSelectedItem();
         ParseQuery<ParseObject> query = ParseQuery.getQuery("OPDClinical");
         query.whereEqualTo("username", username);
         try {
@@ -140,5 +147,17 @@ public class OPDClinicalActivity extends AppCompatActivity implements View.OnCli
         //Setting the title manually
         alert.setTitle("Confirmation");
         alert.show();
+    }
+    void addItemsOnSpinner(){
+        List<String> list = new ArrayList<String>();
+        list.add("0");list.add("1");list.add("2");list.add("3");list.add("4");list.add("5");
+        ArrayAdapter<String> branchAdapter = new ArrayAdapter<String>(this,
+                android.R.layout.simple_spinner_item, list);
+        branchAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+        input1.setAdapter(branchAdapter);
+        input2.setAdapter(branchAdapter);
+        input3.setAdapter(branchAdapter);
+        input4.setAdapter(branchAdapter);
+        input5.setAdapter(branchAdapter);
     }
 }
