@@ -7,71 +7,102 @@
     android:background="@drawable/bg_gradient"
     tools:context=".RubricsActivity"
     android:padding="15dp">
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="vertical">
-        <TextView
-            android:layout_width="match_parent"
-            android:layout_margin="15dp"
-            android:layout_height="wrap_content"
-            android:text="Rubrics Topic Name"
-            android:textAlignment="center"/>
-        <Spinner
-            android:layout_width="match_parent"
-            android:id="@+id/topics"
-            android:layout_margin="15dp"
-            android:textAlignment="center"
-            android:layout_height="wrap_content" />
-        <View
-            android:layout_width="match_parent"
-            android:layout_height="1dp"
-            android:background="#2B2929"/>
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:text="Please select type of surgery"
+            android:id="@+id/textt"
             android:textAlignment="center"
-            android:layout_margin="15dp"
-            android:text="Score"/>
-        <Spinner
+            android:textSize="25sp"/>
+        <LinearLayout
             android:layout_width="match_parent"
-            android:layout_margin="15dp"
-            android:id="@+id/score"
-            android:textAlignment="center"
-            android:layout_height="wrap_content" />
-        <View
-            android:layout_width="match_parent"
-            android:layout_height="1dp"
-            android:background="#2B2929"/>
-        <TextView
-            android:layout_width="match_parent"
-            android:layout_margin="15dp"
-            android:textAlignment="center"
             android:layout_height="wrap_content"
-            android:text="Remarks (If marks is below 3 only)"/>
-        <EditText
-            android:layout_width="match_parent"
-            android:layout_margin="15dp"
-            android:padding="15dp"
-            android:id="@+id/remarks"
-            android:textAlignment="center"
-            android:layout_height="50dp"
-            android:textStyle="normal"
-            android:singleLine="true"
-            />
-        <View
-            android:layout_width="match_parent"
-            android:layout_height="1dp"
-            android:background="#2B2929"/>
-    </LinearLayout>
-    <Button
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_centerHorizontal="true"
-        android:layout_alignParentBottom="true"
-        android:background="@drawable/round_bg"
-        android:layout_marginBottom="50dp"
-        android:id="@+id/submit"
-        android:text="submit"/>
-    
+            android:layout_centerInParent="true"
+            android:orientation="vertical"
+            android:scrollbars="vertical"
+
+            >
+            <Button
+                android:layout_width="wrap_content"
+                android:layout_centerHorizontal="true"
+                android:text="LTS"
+                android:layout_gravity="center"
+                android:background="@drawable/round_bg"
+                android:layout_marginVertical="10dp"
+                android:id="@+id/lts"
+                android:padding="10dp"
+                android:layout_height="wrap_content" />
+            <Button
+                android:layout_width="wrap_content"
+                android:layout_centerHorizontal="true"
+                android:text="pediatric cataract surgery"
+                android:layout_gravity="center"
+                android:padding="10dp"
+                android:background="@drawable/round_bg"
+                android:layout_marginVertical="10dp"
+                android:id="@+id/pcs"
+                android:layout_height="wrap_content" />
+            <Button
+                android:layout_width="wrap_content"
+                android:layout_centerHorizontal="true"
+                android:text="Phaco"
+                android:padding="10dp"
+                android:layout_gravity="center"
+                android:background="@drawable/round_bg"
+                android:layout_marginVertical="10dp"
+                android:id="@+id/phaco"
+                android:layout_height="wrap_content" />
+            <Button
+                android:layout_width="wrap_content"
+                android:layout_centerHorizontal="true"
+                android:text="Ptosis"
+                android:padding="10dp"
+                android:layout_gravity="center"
+                android:background="@drawable/round_bg"
+                android:layout_marginVertical="10dp"
+                android:id="@+id/ptosis"
+                android:layout_height="wrap_content" />
+            <Button
+                android:layout_width="wrap_content"
+                android:layout_centerHorizontal="true"
+                android:text="SICS"
+                android:padding="10dp"
+                android:layout_gravity="center"
+                android:background="@drawable/round_bg"
+                android:layout_marginVertical="10dp"
+                android:id="@+id/sics"
+                android:layout_height="wrap_content" />
+            <Button
+                android:layout_width="wrap_content"
+                android:layout_centerHorizontal="true"
+                android:text="Strabismus"
+                android:padding="10dp"
+                android:layout_gravity="center"
+                android:background="@drawable/round_bg"
+                android:layout_marginVertical="10dp"
+                android:id="@+id/strabismus"
+                android:layout_height="wrap_content" />
+            <Button
+                android:layout_width="wrap_content"
+                android:layout_centerHorizontal="true"
+                android:text="Trabeculectomy"
+                android:layout_gravity="center"
+                android:background="@drawable/round_bg"
+                android:layout_marginVertical="10dp"
+                android:padding="10dp"
+                android:id="@+id/trabeculectomy"
+                android:layout_height="wrap_content" />
+            <Button
+                android:layout_width="wrap_content"
+                android:layout_centerHorizontal="true"
+                android:text="Vitrectomy"
+                android:layout_gravity="center"
+                android:background="@drawable/round_bg"
+                android:layout_marginVertical="10dp"
+                android:padding="10dp"
+                android:id="@+id/vitrectomy"
+                android:layout_height="wrap_content" />
+        </LinearLayout>
+
+
 </RelativeLayout>

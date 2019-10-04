@@ -23,7 +23,9 @@ import java.sql.Struct;
 import java.util.List;
 
 public class RubricsActivity extends AppCompatActivity implements View.OnClickListener {
-
+    Button button1,button2,button3,button4,button5,button6,button7,button8;
+    Bundle bundle;
+    String username;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -32,17 +34,8 @@ public class RubricsActivity extends AppCompatActivity implements View.OnClickLi
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
         bundle = getIntent().getExtras();
         username = bundle.getString("username");
-        topic = findViewById(R.id.topics);
-        score = findViewById(R.id.score);
-        ArrayAdapter<String> adapter = new ArrayAdapter<String>(getApplicationContext(),android.R.layout.simple_spinner_item,topics);
-        adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
-        topic.setAdapter(adapter);
-        ArrayAdapter<String> adapter1 = new ArrayAdapter<String>(getApplicationContext(),android.R.layout.simple_spinner_item,scores);
-        adapter1.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
-        score.setAdapter(adapter1);
-        remarks = findViewById(R.id.remarks);
-        button = findViewById(R.id.submit);
-        button.setOnClickListener(this);
+        findViews();
+
 
 
     }
@@ -65,104 +58,57 @@ public class RubricsActivity extends AppCompatActivity implements View.OnClickLi
         return super.onOptionsItemSelected(item);
     }
     @Override
-    public boolean onSupportNavigateUp()
-    {
+    public boolean onSupportNavigateUp() {
         // getSupportActionBar().setDisplayHomeAsUpEnabled(true);
         onBackPressed();
         return true;
     }
 
+    void findViews() {
+        button1=findViewById(R.id.lts);
+        button2=findViewById(R.id.pcs);
+        button3=findViewById(R.id.phaco);
+        button4=findViewById(R.id.ptosis);
+        button5=findViewById(R.id.sics);
+        button6=findViewById(R.id.strabismus);
+        button7=findViewById(R.id.trabeculectomy);
+        button8=findViewById(R.id.vitrectomy);
+        button1.setOnClickListener(this);
+        button2.setOnClickListener(this);
+        button3.setOnClickListener(this);
+        button4.setOnClickListener(this);
+        button5.setOnClickListener(this);
+        button6.setOnClickListener(this);
+        button7.setOnClickListener(this);
+        button8.setOnClickListener(this);
+
+    }
+
+
+
 
     @Override
     public void onClick(View v) {
-
-        int sc  = Integer.parseInt(score.getSelectedItem().toString());
-        String rem = String.valueOf(remarks.getText());
-        Log.e("Message",sc+" "+rem);
-        if (sc<=3)
+        int id=v.getId();
+        switch (id)
         {
-            Log.e("Message","test1");
-            if (rem.equals("") ||rem.equals(null) )
-            {
-                Toast.makeText(getApplicationContext(),"Please Enter Remarks",Toast.LENGTH_LONG).show();
-                Log.e("Message","test2");
-                return;
-
-            }
-           // else continue outer;
-
-
+            case R.id.lts:startActivity(new Intent(RubricsActivity.this,LTS.class).putExtra("username",username));
+                break;
+            case R.id.pcs:startActivity(new Intent(RubricsActivity.this,PCS.class).putExtra("username",username));
+                break;
+            case R.id.phaco:startActivity(new Intent(RubricsActivity.this,Phaco.class).putExtra("username",username));
+                break;
+            case R.id.ptosis:startActivity(new Intent(RubricsActivity.this,Ptosis.class).putExtra("username",username));
+                break;
+            case R.id.sics:startActivity(new Intent(RubricsActivity.this,SICS.class).putExtra("username",username));
+                break;
+            case R.id.strabismus:startActivity(new Intent(RubricsActivity.this,Stram.class).putExtra("username",username));
+                break;
+            case R.id.trabeculectomy:startActivity(new Intent(RubricsActivity.this,Trab.class).putExtra("username",username));
+                break;
+            case R.id.vitrectomy:startActivity(new Intent(RubricsActivity.this,Vit.class).putExtra("username",username));
+                break;
         }
-            Log.e("Message","test3");
-          ParseQuery<ParseObject> query = ParseQuery.getQuery("RubricsTopic");
-            query.whereEqualTo("username",username);
-            try{
-                List<ParseObject> value = query.find();
-                if(value.size()<=10)
-                {
-                    String seltopic = topic.getSelectedItem().toString();
-                    int selScore = Integer.parseInt(score.getSelectedItem().toString());
-                    String remark = (selScore<3)?String.valueOf(remarks.getText()):"";
-                    ParseObject parseObject = new ParseObject("RubricsForm");
-                    parseObject.put("username",username);
-                    parseObject.put("topic",seltopic);
-                    parseObject.put("score",selScore+"");
-                    parseObject.put("remarks",remark);
-                    parseObject.saveInBackground(new SaveCallback() {
-                        @Override
-                        public void done(ParseException e) {
-                            if (e==null)
-                            {
-                                Toast.makeText(getApplicationContext(),"Saved Successfully",Toast.LENGTH_LONG).show();
-                            }
-                            else
-                            {
-                                Toast.makeText(getApplicationContext(),"Save Unsuccessful",Toast.LENGTH_LONG).show();
-                            }
-
-
-                        }
-                    });
-                }
-                else
-                {
-                    Toast.makeText(getApplicationContext(),"Maximum Topic Limit Reached!!",Toast.LENGTH_LONG).show();
-                }
-            }
-            catch (ParseException p)
-            {
-                p.printStackTrace();
-            }
-
-
 
     }
-    String[] topics = {
-            "Select Anyone"
-            ,"Draping"
-            ,"Scleral access and Cauterization"
-            ,"Sclerocorneal Tunnel"
-            ,"Corneal Entry"
-            , "Paracentesis and Viscoelastic Insertion"
-            ,"Capsulorrhexis: Commencement of Flap & follow-through."
-            ,"Capsulorrhexis: Formation and Circular Completion."
-            ,"Hydrodissection: Visible Fluid Wave and Free prolapse of one pole of the nucleus."
-            ,"Prolapse of nucleus completely into AC."
-            ,"Nucleus Extraction"
-            ,"Irrigation and Aspiration Technique with adequate removal of cortex"
-            ,"Lens Insertion, Rotation, and Final position of intraocular Lens"
-            ,"Wound Closure (Including Suturing, Hydration, and Checking Security as Required)"
-            ,"Global Indices Wound Neutrality and Minimizing Eye Rolling and Corneal Distortion"
-            ,"Eye Positioned Centrally With in Microscope View"
-            ,"Conjunctival and Corneal Tissue Handling"
-            ,"Intraocular Spatial awareness"
-            ,"Iris Protection"
-            ,"Overall Speed and Fluidity of Procedure"};
-    String[] scores = {"0","1","2","3","4","5"};
-    Spinner topic,score;
-    EditText remarks;
-    Button button;
-    Bundle bundle;
-    String username;
-
 }

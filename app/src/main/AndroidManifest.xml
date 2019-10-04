@@ -10,7 +10,15 @@
         android:roundIcon="@drawable/logo"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".Teacher1Activity"></activity>
+        <activity android:name=".Vit"></activity>
+        <activity android:name=".Trab" />
+        <activity android:name=".Stram" />
+        <activity android:name=".SICS" />
+        <activity android:name=".Ptosis" />
+        <activity android:name=".Phaco" />
+        <activity android:name=".PCS" />
+        <activity android:name=".LTS" />
+        <activity android:name=".Teacher1Activity" />
         <activity android:name=".TeacherRoot" />
         <activity android:name=".Exam" />
         <activity android:name=".CasePresentation" />
