@@ -13,6 +13,14 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:orientation="vertical">
+            <ImageButton
+                android:layout_width="50dp"
+                android:layout_gravity="right"
+                android:layout_margin="5dp"
+
+                android:background="@drawable/round_bg"
+                android:src="@drawable/help"
+                android:layout_height="50dp" />
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -573,7 +581,9 @@
                 android:id="@+id/pcs_submit"
                 android:text="Submit"
                 android:padding="20dp"/>
+
         </LinearLayout>
     </ScrollView>
+
 
 </RelativeLayout>
