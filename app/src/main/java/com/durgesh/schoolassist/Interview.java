@@ -11,6 +11,7 @@ import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.Spinner;
 import android.widget.Toast;
 
 import com.parse.ParseException;
@@ -21,7 +22,7 @@ import com.parse.SaveCallback;
 public class Interview extends AppCompatActivity implements View.OnClickListener {
     Bundle bundle;
     String username;
-    EditText input1,input2,input3,input4,input5,input6;
+    Spinner input1,input2,input3,input4,input5,input6;
     String text1,text2,text3,text4,text5,text6;
     Button button;
     @Override
@@ -73,12 +74,12 @@ public class Interview extends AppCompatActivity implements View.OnClickListener
 
     @Override
     public void onClick(View v) {
-        text1=input1.getText().toString().trim();
-        text2=input2.getText().toString().trim();
-        text3=input3.getText().toString().trim();
-        text4=input4.getText().toString().trim();
-        text5=input5.getText().toString().trim();
-        text6=input6.getText().toString().trim();
+        text1=input1.getSelectedItem().toString().trim();
+        text2=input2.getSelectedItem().toString().trim();
+        text3=input3.getSelectedItem().toString().trim();
+        text4=input4.getSelectedItem().toString().trim();
+        text5=input5.getSelectedItem().toString().trim();
+        text6=input6.getSelectedItem().toString().trim();
         ParseQuery<ParseObject> query = ParseQuery.getQuery("InterviewSkills");
         query.whereEqualTo("username", username);
         try {

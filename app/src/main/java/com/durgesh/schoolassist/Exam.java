@@ -11,6 +11,7 @@ import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.Spinner;
 import android.widget.Toast;
 
 import com.parse.ParseException;
@@ -23,7 +24,7 @@ import java.util.List;
 public class Exam extends AppCompatActivity implements View.OnClickListener {
     Bundle bundle;
     String username;
-    EditText input1,input2,input3,input4,input5,input6,input7,input8;
+    Spinner input1,input2,input3,input4,input5,input6,input7,input8;
     String text1,text2,text3,text4,text5,text6,text7,text8;
     Button button;
 
@@ -80,14 +81,14 @@ public class Exam extends AppCompatActivity implements View.OnClickListener {
 
     @Override
     public void onClick(View v) {
-        text1=input1.getText().toString().trim();
-        text2=input2.getText().toString().trim();
-        text3=input3.getText().toString().trim();
-        text4=input4.getText().toString().trim();
-        text5=input5.getText().toString().trim();
-        text6=input6.getText().toString().trim();
-        text7=input7.getText().toString().trim();
-        text8=input8.getText().toString().trim();
+        text1=input1.getSelectedItem().toString().trim();
+        text2=input2.getSelectedItem().toString().trim();
+        text3=input3.getSelectedItem().toString().trim();
+        text4=input4.getSelectedItem().toString().trim();
+        text5=input5.getSelectedItem().toString().trim();
+        text6=input6.getSelectedItem().toString().trim();
+        text7=input7.getSelectedItem().toString().trim();
+        text8=input8.getSelectedItem().toString().trim();
         ParseQuery<ParseObject> query = ParseQuery.getQuery("Exam");
         query.whereEqualTo("username", username);
         try {
