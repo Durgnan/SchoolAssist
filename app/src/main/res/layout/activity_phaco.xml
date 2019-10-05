@@ -19,6 +19,7 @@
                 android:layout_gravity="right"
                 android:layout_margin="5dp"
                 android:background="@drawable/round_bg"
+                android:id="@+id/phacoimg"
                 android:src="@drawable/help"
                 android:layout_height="50dp" />
             <LinearLayout

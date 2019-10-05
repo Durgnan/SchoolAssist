@@ -11,6 +11,7 @@ import android.view.MenuItem;
 import android.view.View;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
+import android.widget.ImageButton;
 import android.widget.Spinner;
 import android.widget.Toast;
 
@@ -30,6 +31,7 @@ public class Vit extends AppCompatActivity implements View.OnClickListener{
     Spinner[] inputs=new Spinner[20];
     Button button;
     List<String> list=new ArrayList<>();
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -83,6 +85,26 @@ public class Vit extends AppCompatActivity implements View.OnClickListener{
         inputs[17]=findViewById(R.id.vit18);
         inputs[18]=findViewById(R.id.vit19);
         inputs[19]=findViewById(R.id.vit20);
+        ImageButton imageButton=findViewById(R.id.vitimg);
+        imageButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                AlertDialog.Builder builder = new AlertDialog.Builder(getApplicationContext());
+                builder.setMessage(" Novice (score=2)\n Beginner (score=3) \n Advanced Beginner (score=4)\n Competent (score=5)")
+                        .setCancelable(false)
+                        .setPositiveButton("OK", new DialogInterface.OnClickListener() {
+                            public void onClick(DialogInterface dialog, int id) {
+
+
+                            }
+                        });
+
+                AlertDialog alert = builder.create();
+                //Setting the title manually
+                alert.setTitle("Info");
+                alert.show();
+            }
+        });
         addItemsOnSpinner();
 
 

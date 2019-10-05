@@ -11,6 +11,7 @@ import android.view.MenuItem;
 import android.view.View;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
+import android.widget.ImageButton;
 import android.widget.Spinner;
 import android.widget.Toast;
 
@@ -88,6 +89,26 @@ public class PCS extends AppCompatActivity implements View.OnClickListener {
         inputs[20]=findViewById(R.id.ip);
         inputs[21]=findViewById(R.id.osafop);
         inputs[22]=findViewById(R.id.cwst);
+        ImageButton imageButton=findViewById(R.id.pcsimg);
+        imageButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                AlertDialog.Builder builder = new AlertDialog.Builder(getApplicationContext());
+                builder.setMessage(" Novice (score=2)\n Beginner (score=3) \n Advanced Beginner (score=4)\n Competent (score=5)")
+                        .setCancelable(false)
+                        .setPositiveButton("OK", new DialogInterface.OnClickListener() {
+                            public void onClick(DialogInterface dialog, int id) {
+
+
+                            }
+                        });
+
+                AlertDialog alert = builder.create();
+                //Setting the title manually
+                alert.setTitle("Info");
+                alert.show();
+            }
+        });
         addItemsOnSpinner();
 
 

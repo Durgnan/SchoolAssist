@@ -12,6 +12,7 @@ import android.view.View;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ImageButton;
 import android.widget.Spinner;
 import android.widget.Toast;
 
@@ -72,6 +73,26 @@ public class Interpersonal extends AppCompatActivity implements View.OnClickList
         input4=findViewById(R.id.diagnosis1);
         input5=findViewById(R.id.plan1);
         input6=findViewById(R.id.patientinteraction1);
+        ImageButton imageButton=findViewById(R.id.personalimg);
+        imageButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                AlertDialog.Builder builder = new AlertDialog.Builder(getApplicationContext());
+                builder.setMessage(" Novice (score=2)\n Beginner (score=3) \n Advanced Beginner (score=4)\n Competent (score=5)")
+                        .setCancelable(false)
+                        .setPositiveButton("OK", new DialogInterface.OnClickListener() {
+                            public void onClick(DialogInterface dialog, int id) {
+
+
+                            }
+                        });
+
+                AlertDialog alert = builder.create();
+                //Setting the title manually
+                alert.setTitle("Info");
+                alert.show();
+            }
+        });
         addItemsOnSpinner();
         button=findViewById(R.id.submit_report1);
         button.setOnClickListener(this);

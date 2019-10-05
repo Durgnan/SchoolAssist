@@ -11,6 +11,7 @@ import android.view.MenuItem;
 import android.view.View;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
+import android.widget.ImageButton;
 import android.widget.Spinner;
 import android.widget.Toast;
 
@@ -80,6 +81,26 @@ public class Stram extends AppCompatActivity implements View.OnClickListener{
         inputs[14]=findViewById(R.id.stram15);
         inputs[15]=findViewById(R.id.stram16);
         inputs[16]=findViewById(R.id.stram17);
+        ImageButton imageButton=findViewById(R.id.stramimg);
+        imageButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                AlertDialog.Builder builder = new AlertDialog.Builder(getApplicationContext());
+                builder.setMessage(" Novice (score=2)\n Beginner (score=3) \n Advanced Beginner (score=4)\n Competent (score=5)")
+                        .setCancelable(false)
+                        .setPositiveButton("OK", new DialogInterface.OnClickListener() {
+                            public void onClick(DialogInterface dialog, int id) {
+
+
+                            }
+                        });
+
+                AlertDialog alert = builder.create();
+                //Setting the title manually
+                alert.setTitle("Info");
+                alert.show();
+            }
+        });
         addItemsOnSpinner();
 
 

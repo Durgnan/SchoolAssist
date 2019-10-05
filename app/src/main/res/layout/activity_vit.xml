@@ -18,6 +18,7 @@
                 android:layout_gravity="right"
                 android:layout_margin="5dp"
                 android:background="@drawable/round_bg"
+                android:id="@+id/vitimg"
                 android:src="@drawable/help"
                 android:layout_height="50dp" />
             <LinearLayout
