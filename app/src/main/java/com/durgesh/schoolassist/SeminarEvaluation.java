@@ -26,16 +26,18 @@ import org.json.JSONArray;
 import java.util.ArrayList;
 import java.util.List;
 
-public class Phaco extends AppCompatActivity implements View.OnClickListener{
+public class SeminarEvaluation extends AppCompatActivity implements View.OnClickListener{
+    ImageButton unhappy,neutral,happy,vhappy;
     Bundle bundle;
     String username;
-    Spinner[] inputs=new Spinner[20];
+    Spinner[] inputs = new Spinner[10];
     Button button;
     List<String> list=new ArrayList<>();
+    String feedback="";
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_phaco);
+        setContentView(R.layout.activity_seminar_evaluation);
         init();
     }
     @Override
@@ -44,6 +46,7 @@ public class Phaco extends AppCompatActivity implements View.OnClickListener{
         onBackPressed();
         return true;
     }
+
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         getMenuInflater().inflate(R.menu.logout,menu);
@@ -56,68 +59,71 @@ public class Phaco extends AppCompatActivity implements View.OnClickListener{
 
         if (id==R.id.log_out)
         {
-            startActivity(new Intent(Phaco.this,MainActivity.class).setFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK).setFlags(Intent.FLAG_ACTIVITY_NEW_TASK));
+            startActivity(new Intent(SeminarEvaluation.this,MainActivity.class).setFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK).setFlags(Intent.FLAG_ACTIVITY_NEW_TASK));
             finish();
         }
 
         return super.onOptionsItemSelected(item);
     }
+
     public void init(){
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
         bundle = getIntent().getExtras();
         username = bundle.getString("username");
-        inputs[0]=findViewById(R.id.phaco1);
-        inputs[1]=findViewById(R.id.phaco2);
-        inputs[2]=findViewById(R.id.phaco3);
-        inputs[3]=findViewById(R.id.phaco4);
-        inputs[4]=findViewById(R.id.phaco5);
-        inputs[5]=findViewById(R.id.phaco6);
-        inputs[6]=findViewById(R.id.phaco7);
-        inputs[7]=findViewById(R.id.phaco8);
-        inputs[8]=findViewById(R.id.phaco9);
-        inputs[9]=findViewById(R.id.phaco10);
-        inputs[10]=findViewById(R.id.phaco11);
-        inputs[11]=findViewById(R.id.phaco12);
-        inputs[12]=findViewById(R.id.phaco13);
-        inputs[13]=findViewById(R.id.phaco14);
-        inputs[14]=findViewById(R.id.phaco15);
-        inputs[15]=findViewById(R.id.phaco16);
-        inputs[16]=findViewById(R.id.phaco17);
-        inputs[17]=findViewById(R.id.phaco18);
-        inputs[18]=findViewById(R.id.phaco19);
-        inputs[19]=findViewById(R.id.phaco20);
-        ImageButton imageButton=findViewById(R.id.phacoimg);
+        inputs[0]=findViewById(R.id.se1);
+        inputs[1]=findViewById(R.id.se2);
+        inputs[2]=findViewById(R.id.se3);
+        inputs[3]=findViewById(R.id.se4);
+        inputs[4]=findViewById(R.id.se5);
+        inputs[5]=findViewById(R.id.se6);
+        inputs[6]=findViewById(R.id.se7);
+        inputs[7]=findViewById(R.id.se8);
+        inputs[8]=findViewById(R.id.se9);
+        inputs[9]=findViewById(R.id.se10);
+
+        unhappy=findViewById(R.id.seunhappy);
+        neutral=findViewById(R.id.seneutral);
+        happy=findViewById(R.id.sehappy);
+        vhappy=findViewById(R.id.sevhappy);
+        unhappy.setOnClickListener(feedbackController);
+        neutral.setOnClickListener(feedbackController);
+        happy.setOnClickListener(feedbackController);
+        vhappy.setOnClickListener(feedbackController);
+
+
+
+        ImageButton imageButton=findViewById(R.id.seimg);
         imageButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                startActivity(new Intent(Phaco.this,Pop.class));
+                startActivity(new Intent(SeminarEvaluation.this,Pop1.class));
             }
         });
         addItemsOnSpinner();
 
 
-        button=findViewById(R.id.phaco_submit);
+        button=findViewById(R.id.se_submit);
         button.setOnClickListener(this);
 
 
     }
     void  addItemsOnSpinner()
     {
-        List<String> list = new ArrayList<String>();
-        list.add("0");list.add("1");list.add("2");list.add("3");list.add("4");list.add("5");
-        ArrayAdapter<String> branchAdapter = new ArrayAdapter<String>(this,
+        List<String> list = new ArrayList<>();
+        list.add("1");list.add("2");list.add("3");list.add("4");
+        ArrayAdapter<String> branchAdapter = new ArrayAdapter<>(this,
                 android.R.layout.simple_spinner_item, list);
         branchAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
-        for(int i=0;i<20;i++)
+        for(int i=0;i<10;i++)
             inputs[i].setAdapter(branchAdapter);
 
     }
 
     @Override
     public void onClick(View v) {
-        for (int i=0;i<20;i++)
+        for (int i=0;i<10;i++)
             list.add(i,inputs[i].getSelectedItem().toString().trim());
-        ParseQuery<ParseObject> query = ParseQuery.getQuery("Phaco");
+        ParseQuery<ParseObject> query = ParseQuery.getQuery("SeminarEvaluation");
         query.whereEqualTo("username", username);
         try {
             if (query.count()>0)
@@ -144,15 +150,16 @@ public class Phaco extends AppCompatActivity implements View.OnClickListener{
                     public void onClick(DialogInterface dialog, int id) {
 
                         //Add The Values to database
-                        ParseObject registerObject = new ParseObject("Phaco");
+                        ParseObject registerObject = new ParseObject("SeminarEvaluation");
                         registerObject.put("username", username);
-                        EditText editText=findViewById(R.id.commentphaco);
+                        JSONArray array = new JSONArray(list);
+                        EditText editText=findViewById(R.id.commentse);
                         if(editText.getText().toString().trim()==null ||editText.getText().toString().trim()=="")
                             registerObject.put("comments","");
                         else
                             registerObject.put("comments",editText.getText().toString().trim());
-                        JSONArray array = new JSONArray(list);
                         registerObject.put("Score",array);
+                        registerObject.put("feedback",feedback);
                         registerObject.saveInBackground(new SaveCallback() {
                             @Override
                             public void done(ParseException e) {
@@ -181,4 +188,44 @@ public class Phaco extends AppCompatActivity implements View.OnClickListener{
         alert.setTitle("Confirmation");
         alert.show();
     }
+
+    View.OnClickListener feedbackController = new View.OnClickListener() {
+        @Override
+        public void onClick(View v) {
+            int id = v.getId();
+            switch(id)
+            {
+                case R.id.seunhappy:
+                    feedback="UNHAPPY";
+                    unhappy.setImageResource(R.drawable.unhappy_green);
+                    neutral.setImageResource(R.drawable.neutral_red);
+                    happy.setImageResource(R.drawable.happy_red);
+                    vhappy.setImageResource(R.drawable.vhappy_red);
+
+
+                    break;
+                case R.id.seneutral:
+                    feedback="NEUTRAL";
+                    unhappy.setImageResource(R.drawable.unhappy_red);
+                    neutral.setImageResource(R.drawable.neutral_green);
+                    happy.setImageResource(R.drawable.happy_red);
+                    vhappy.setImageResource(R.drawable.vhappy_red);
+                    break;
+                case R.id.sehappy:
+                    feedback="HAPPY";
+                    unhappy.setImageResource(R.drawable.unhappy_red);
+                    neutral.setImageResource(R.drawable.neutral_red);
+                    happy.setImageResource(R.drawable.happy_green);
+                    vhappy.setImageResource(R.drawable.vhappy_red);
+                    break;
+                case R.id.sevhappy:
+                    feedback="VERY HAPPY";
+                    unhappy.setImageResource(R.drawable.unhappy_red);
+                    neutral.setImageResource(R.drawable.neutral_red);
+                    happy.setImageResource(R.drawable.happy_red);
+                    vhappy.setImageResource(R.drawable.vhappy_green);
+                    break;
+            }
+        }
+    };
 }

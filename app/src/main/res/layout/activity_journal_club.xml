@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
     android:background="@drawable/bg_gradient"
-    tools:context=".Vit">
+    android:layout_height="match_parent"
+    tools:context=".JournalClub">
     <ScrollView
         android:layout_width="match_parent"
         android:layout_height="match_parent">
@@ -18,7 +18,7 @@
                 android:layout_gravity="right"
                 android:layout_margin="5dp"
                 android:background="@drawable/round_bg"
-                android:id="@+id/vitimg"
+                android:id="@+id/jcimg"
                 android:src="@drawable/help"
                 android:layout_height="50dp" />
             <LinearLayout
@@ -30,7 +30,7 @@
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="match_parent"
-                    android:text="Draping"
+                    android:text="Background Information/ \n Relevant Topic"
                     android:layout_gravity="center"
                     android:singleLine="false"
                     android:maxLines="4"
@@ -42,7 +42,7 @@
                     android:entries="@array/marking"
                     android:background="@drawable/round_bg"
                     android:paddingHorizontal="20dp"
-                    android:id="@+id/vit1"
+                    android:id="@+id/jc1"
                     />
             </LinearLayout>
             <LinearLayout
@@ -56,7 +56,7 @@
                     android:layout_height="match_parent"
                     android:singleLine="false"
                     android:maxLines="4"
-                    android:text="Trocar placement – positioning"
+                    android:text="Summarizes and presents \n pertinent methods, statics, \n and results"
                     android:layout_gravity="center"
                     android:textSize="15dp"/>
                 <Spinner
@@ -66,7 +66,7 @@
                     android:entries="@array/marking"
                     android:background="@drawable/round_bg"
                     android:paddingHorizontal="20dp"
-                    android:id="@+id/vit2"
+                    android:id="@+id/jc2"
                     />
             </LinearLayout>
             <LinearLayout
@@ -78,7 +78,7 @@
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="match_parent"
-                    android:text="Trocar placement – \n beveled wounds"
+                    android:text="Selects &amp; critically evaluates \n quality of primary literature."
                     android:layout_gravity="center"
                     android:singleLine="false"
                     android:maxLines="4"
@@ -90,7 +90,7 @@
                     android:entries="@array/marking"
                     android:background="@drawable/round_bg"
                     android:paddingHorizontal="20dp"
-                    android:id="@+id/vit3"
+                    android:id="@+id/jc3"
                     />
             </LinearLayout>
             <LinearLayout
@@ -102,7 +102,7 @@
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="match_parent"
-                    android:text="Infusion placement"
+                    android:text="Separate content areas \n to synthesize own conclusions \n based on critical appraisal \n of the literature"
                     android:layout_gravity="center"
                     android:singleLine="false"
                     android:maxLines="4"
@@ -114,31 +114,7 @@
                     android:entries="@array/marking"
                     android:background="@drawable/round_bg"
                     android:paddingHorizontal="20dp"
-                    android:id="@+id/vit4"
-                    />
-            </LinearLayout>
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="50dp"
-                android:layout_marginBottom="25dp"
-                android:orientation="horizontal">
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="match_parent"
-                    android:singleLine="false"
-                    android:maxLines="4"
-                    android:text="Instrument positioning"
-                    android:layout_gravity="center"
-                    android:textSize="15dp"/>
-                <Spinner
-                    android:layout_width="wrap_content"
-                    android:layout_height="match_parent"
-                    android:layout_marginLeft="15dp"
-                    android:entries="@array/marking"
-                    android:background="@drawable/round_bg"
-                    android:paddingHorizontal="20dp"
-                    android:id="@+id/vit5"
+                    android:id="@+id/jc4"
                     />
             </LinearLayout>
             <LinearLayout
@@ -152,7 +128,7 @@
                     android:layout_height="match_parent"
                     android:singleLine="false"
                     android:maxLines="4"
-                    android:text="Core vitrectomy"
+                    android:text="Clear recommendations based \n on synthesis of all \n primary literature."
                     android:layout_gravity="center"
                     android:textSize="15dp"/>
                 <Spinner
@@ -162,7 +138,7 @@
                     android:entries="@array/marking"
                     android:background="@drawable/round_bg"
                     android:paddingHorizontal="20dp"
-                    android:id="@+id/vit6"
+                    android:id="@+id/jc5"
                     />
             </LinearLayout>
             <LinearLayout
@@ -176,7 +152,7 @@
                     android:layout_height="match_parent"
                     android:singleLine="false"
                     android:maxLines="4"
-                    android:text="Create or confirm a PVD"
+                    android:text="Display professionalism &amp; confidence."
                     android:layout_gravity="center"
                     android:textSize="15dp"/>
                 <Spinner
@@ -186,7 +162,7 @@
                     android:entries="@array/marking"
                     android:background="@drawable/round_bg"
                     android:paddingHorizontal="20dp"
-                    android:id="@+id/vit7"
+                    android:id="@+id/jc6"
                     />
             </LinearLayout>
             <LinearLayout
@@ -200,7 +176,7 @@
                     android:layout_height="match_parent"
                     android:singleLine="false"
                     android:maxLines="4"
-                    android:text="Peripheral vitrectomy"
+                    android:text="Information in an organized \n &amp; logical sequence"
                     android:layout_gravity="center"
                     android:textSize="15dp"/>
                 <Spinner
@@ -210,103 +186,7 @@
                     android:entries="@array/marking"
                     android:background="@drawable/round_bg"
                     android:paddingHorizontal="20dp"
-                    android:id="@+id/vit8"
-                    />
-            </LinearLayout>
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="50dp"
-                android:layout_marginBottom="25dp"
-                android:orientation="horizontal">
-                <TextView
-                    android:text="Subretinal fluid drainage"
-                    android:layout_width="wrap_content"
-                    android:layout_height="match_parent"
-                    android:layout_gravity="center"
-                    android:singleLine="false"
-                    android:maxLines="4"
-                    android:textSize="15dp"/>
-                <Spinner
-                    android:layout_width="wrap_content"
-                    android:layout_height="match_parent"
-                    android:layout_marginLeft="15dp"
-                    android:entries="@array/marking"
-                    android:background="@drawable/round_bg"
-                    android:paddingHorizontal="20dp"
-                    android:id="@+id/vit9"
-                    />
-            </LinearLayout>
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="50dp"
-                android:layout_marginBottom="25dp"
-                android:orientation="horizontal">
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="match_parent"
-                    android:text="Use of surgical \n adjuncts/dyes"
-                    android:layout_gravity="center"
-                    android:singleLine="false"
-                    android:maxLines="4"
-                    android:textSize="15dp"/>
-                <Spinner
-                    android:layout_width="wrap_content"
-                    android:layout_height="match_parent"
-                    android:layout_marginLeft="15dp"
-                    android:entries="@array/marking"
-                    android:background="@drawable/round_bg"
-                    android:paddingHorizontal="20dp"
-                    android:id="@+id/vit10"
-                    />
-            </LinearLayout>
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="50dp"
-                android:layout_marginBottom="25dp"
-                android:orientation="horizontal">
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="match_parent"
-                    android:text="Endolaser application"
-                    android:layout_gravity="center"
-                    android:singleLine="false"
-                    android:maxLines="4"
-                    android:textSize="15dp"/>
-                <Spinner
-                    android:layout_width="wrap_content"
-                    android:layout_height="match_parent"
-                    android:layout_marginLeft="15dp"
-                    android:entries="@array/marking"
-                    android:background="@drawable/round_bg"
-                    android:paddingHorizontal="20dp"
-                    android:id="@+id/vit11"
-                    />
-            </LinearLayout>
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="50dp"
-                android:layout_marginBottom="25dp"
-                android:orientation="horizontal">
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="match_parent"
-                    android:text="Air fluid exchange"
-                    android:layout_gravity="center"
-                    android:singleLine="false"
-                    android:maxLines="4"
-                    android:textSize="15dp"/>
-                <Spinner
-                    android:layout_width="wrap_content"
-                    android:layout_height="match_parent"
-                    android:layout_marginLeft="15dp"
-                    android:entries="@array/marking"
-                    android:background="@drawable/round_bg"
-                    android:paddingHorizontal="20dp"
-                    android:id="@+id/vit12"
+                    android:id="@+id/jc7"
                     />
             </LinearLayout>
             <LinearLayout
@@ -320,7 +200,7 @@
                     android:layout_height="match_parent"
                     android:singleLine="false"
                     android:maxLines="4"
-                    android:text="Sclerotomy closure"
+                    android:text="Features in presentation \n like videos, fonts etc"
                     android:layout_gravity="center"
                     android:textSize="15dp"/>
                 <Spinner
@@ -330,7 +210,7 @@
                     android:entries="@array/marking"
                     android:background="@drawable/round_bg"
                     android:paddingHorizontal="20dp"
-                    android:id="@+id/vit13"
+                    android:id="@+id/jc8"
                     />
             </LinearLayout>
             <LinearLayout
@@ -340,81 +220,9 @@
                 android:layout_marginBottom="25dp"
                 android:orientation="horizontal">
                 <TextView
+                    android:text="engages audience"
                     android:layout_width="wrap_content"
                     android:layout_height="match_parent"
-                    android:singleLine="false"
-                    android:maxLines="4"
-                    android:text="Use of endotamponade"
-                    android:layout_gravity="center"
-                    android:textSize="15dp"/>
-                <Spinner
-                    android:layout_width="wrap_content"
-                    android:layout_height="match_parent"
-                    android:layout_marginLeft="15dp"
-                    android:entries="@array/marking"
-                    android:background="@drawable/round_bg"
-                    android:paddingHorizontal="20dp"
-                    android:id="@+id/vit14"
-                    />
-            </LinearLayout>
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="50dp"
-                android:layout_marginBottom="25dp"
-                android:orientation="horizontal">
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="match_parent"
-                    android:singleLine="false"
-                    android:maxLines="4"
-                    android:text="Microscope handling"
-                    android:layout_gravity="center"
-                    android:textSize="15dp"/>
-                <Spinner
-                    android:layout_width="wrap_content"
-                    android:layout_height="match_parent"
-                    android:layout_marginLeft="15dp"
-                    android:entries="@array/marking"
-                    android:background="@drawable/round_bg"
-                    android:paddingHorizontal="20dp"
-                    android:id="@+id/vit15"
-                    />
-            </LinearLayout>
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="50dp"
-                android:layout_marginBottom="25dp"
-                android:orientation="horizontal">
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="match_parent"
-                    android:singleLine="false"
-                    android:maxLines="4"
-                    android:text="Lens Viewing system"
-                    android:layout_gravity="center"
-                    android:textSize="15dp"/>
-                <Spinner
-                    android:layout_width="wrap_content"
-                    android:layout_height="match_parent"
-                    android:layout_marginLeft="15dp"
-                    android:entries="@array/marking"
-                    android:background="@drawable/round_bg"
-                    android:paddingHorizontal="20dp"
-                    android:id="@+id/vit16"
-                    />
-            </LinearLayout>
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="50dp"
-                android:layout_marginBottom="25dp"
-                android:orientation="horizontal">
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="match_parent"
-                    android:text="Vitrectomy console"
                     android:layout_gravity="center"
                     android:singleLine="false"
                     android:maxLines="4"
@@ -426,7 +234,7 @@
                     android:entries="@array/marking"
                     android:background="@drawable/round_bg"
                     android:paddingHorizontal="20dp"
-                    android:id="@+id/vit17"
+                    android:id="@+id/jc9"
                     />
             </LinearLayout>
             <LinearLayout
@@ -438,7 +246,7 @@
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="match_parent"
-                    android:text="Direction of vitrector \n port"
+                    android:text="Uses time efficiently &amp; effectively"
                     android:layout_gravity="center"
                     android:singleLine="false"
                     android:maxLines="4"
@@ -450,7 +258,7 @@
                     android:entries="@array/marking"
                     android:background="@drawable/round_bg"
                     android:paddingHorizontal="20dp"
-                    android:id="@+id/vit18"
+                    android:id="@+id/jc10"
                     />
             </LinearLayout>
             <LinearLayout
@@ -462,10 +270,10 @@
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="match_parent"
+                    android:text="Answers questions clearly, \n accurately, &amp; respectfully"
+                    android:layout_gravity="center"
                     android:singleLine="false"
                     android:maxLines="4"
-                    android:text="Efficiency"
-                    android:layout_gravity="center"
                     android:textSize="15dp"/>
                 <Spinner
                     android:layout_width="wrap_content"
@@ -474,33 +282,13 @@
                     android:entries="@array/marking"
                     android:background="@drawable/round_bg"
                     android:paddingHorizontal="20dp"
-                    android:id="@+id/vit19"
+                    android:id="@+id/jc11"
                     />
             </LinearLayout>
-            <LinearLayout
+            <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="50dp"
-                android:layout_marginBottom="25dp"
-                android:orientation="horizontal">
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="match_parent"
-                    android:text="Illumination"
-                    android:layout_gravity="center"
-                    android:singleLine="false"
-                    android:maxLines="4"
-                    android:textSize="15dp"/>
-                <Spinner
-                    android:layout_width="wrap_content"
-                    android:layout_height="match_parent"
-                    android:layout_marginLeft="15dp"
-                    android:entries="@array/marking"
-                    android:background="@drawable/round_bg"
-                    android:paddingHorizontal="20dp"
-                    android:id="@+id/vit20"
-                    />
-            </LinearLayout>
+                android:text="Remarks:(If any)"/>
             <EditText
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -508,17 +296,47 @@
                 android:textSize="20sp"
                 android:hint="Comment if the score is less than 2"
                 android:paddingHorizontal="10dp"
-                android:id="@+id/commentvit"/>
+                android:id="@+id/commentjc"/>
+            <GridLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:rowCount="1"
+                android:layout_marginHorizontal="10dp"
+                android:layout_marginVertical="10dp"
+                android:orientation="horizontal"
+                android:columnCount="4">
+                <ImageButton
+                    android:src="@drawable/unhappy_red"
+                    android:id="@+id/jcunhappy"
+                    android:layout_margin="10dp"
+                    android:background="#ffffff"/>
+                <ImageButton
+                    android:src="@drawable/neutral_red"
+                    android:layout_margin="10dp"
+                    android:id="@+id/jcneutral"
+                    android:background="#ffffff"/>
+                <ImageButton
+                    android:src="@drawable/happy_red"
+                    android:layout_margin="10dp"
+                    android:id="@+id/jchappy"
+                    android:background="#ffffff"/>
+                <ImageButton
+                    android:src="@drawable/vhappy_red"
+                    android:layout_margin="10dp"
+                    android:id="@+id/jcvhappy"
+                    android:background="#ffffff"/>
+            </GridLayout>
             <Button
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:background="@drawable/round_bg"
                 android:layout_gravity="center"
-                android:id="@+id/vit_submit"
+                android:id="@+id/jc_submit"
                 android:text="Submit"
                 android:padding="20dp"/>
 
         </LinearLayout>
     </ScrollView>
 
-</RelativeLayout>
+</android.support.constraint.ConstraintLayout>

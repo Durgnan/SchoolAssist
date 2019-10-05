@@ -10,23 +10,26 @@
         android:roundIcon="@drawable/logo"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".Vit"></activity>
-        <activity android:name=".Trab" />
-        <activity android:name=".Stram" />
-        <activity android:name=".SICS" />
-        <activity android:name=".Ptosis" />
-        <activity android:name=".Phaco" />
-        <activity android:name=".PCS" />
-        <activity android:name=".LTS" />
-        <activity android:name=".Teacher1Activity" />
-        <activity android:name=".TeacherRoot" />
-        <activity android:name=".Exam" />
-        <activity android:name=".CasePresentation" />
-        <activity android:name=".Interpersonal" />
-        <activity android:name=".Interview" />
-        <activity android:name=".OPDSkills" />
-        <activity android:name=".OPDClinicalActivity" />
-        <activity android:name=".OCEXActivity" />
+        <activity android:name=".CasePresentationForTheoryRubrics" android:label="Case Presentation"/>
+        <activity android:name=".JournalClub" android:label="Journal Club" />
+        <activity android:name=".SeminarEvaluation" android:label="Seminar Evaluation"/>
+        <activity android:name=".Vit" android:label="Vitrectomy"/>
+        <activity android:name=".Trab" android:label="Trabeculectomy"/>
+        <activity android:name=".Stram" android:label="Strabismus"/>
+        <activity android:name=".SICS" android:label="SICS"/>
+        <activity android:name=".Ptosis" android:label="Ptosis"/>
+        <activity android:name=".Phaco" android:label="Phaco"/>
+        <activity android:name=".PCS" android:label="Paediatric Cataract Surgery"/>
+        <activity android:name=".LTS" android:label="LTS"/>
+        <activity android:name=".Teacher1Activity" android:label="Upload Question"/>
+        <activity android:name=".TeacherRoot" android:label="Teacher Home" />
+        <activity android:name=".Exam" android:label="Exam"/>
+        <activity android:name=".CasePresentation" android:label="Case Presentation"/>
+        <activity android:name=".Interpersonal" android:label="Interpersonal Skills"/>
+        <activity android:name=".Interview" android:label="Interview Skills"/>
+        <activity android:name=".OPDSkills" android:label="OPD Skills"/>
+        <activity android:name=".OPDClinicalActivity" android:label="OPD Clinical Skills"/>
+        <activity android:name=".OCEXActivity" android:label="OCEX"/>
         <activity
             android:name=".SignUpActivity"
             android:label="Sign Up" />
@@ -35,19 +38,19 @@
             android:label="Take Quiz" />
         <activity
             android:name=".TeacherActivity"
-            android:label="Teacher" />
+            android:label="Assessment" />
         <activity
             android:name=".RubricsActivity"
             android:label="Rubrics" />
         <activity
             android:name=".QuizActivity"
-            android:label="Quiz" />
+            android:label="Theory Rubrics" />
         <activity
             android:name=".PracticalsActivity"
             android:label="Practicals" />
         <activity
             android:name=".StudentActivity"
-            android:label="Student" />
+            android:label="Student Home" />
         <activity
             android:name=".SplashActivity"
             android:theme="@style/Theme.AppCompat.NoActionBar">
@@ -60,6 +63,9 @@
         <activity
             android:name=".MainActivity"
             android:label="Login" />
+        <activity android:name=".Pop" android:theme="@style/AppTheme.CustomTheme"/>
+        <activity android:name=".Pop1" android:theme="@style/AppTheme.CustomTheme"/>
     </application>
+
 
 </manifest>

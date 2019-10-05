@@ -1,11 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@drawable/bg_gradient"
-    tools:context=".Exam">
+    tools:context=".CasePresentationForTheoryRubrics">
     <ScrollView
         android:layout_width="match_parent"
         android:layout_height="match_parent">
@@ -17,8 +16,8 @@
                 android:layout_width="50dp"
                 android:layout_gravity="right"
                 android:layout_margin="5dp"
-                android:id="@+id/examimg"
                 android:background="@drawable/round_bg"
+                android:id="@+id/cptrimg"
                 android:src="@drawable/help"
                 android:layout_height="50dp" />
             <LinearLayout
@@ -26,14 +25,15 @@
                 android:layout_height="wrap_content"
                 android:layout_marginTop="50dp"
                 android:layout_marginBottom="25dp"
-
                 android:orientation="horizontal">
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="match_parent"
-                    android:text="Visual Acuity"
+                    android:text="Knowledge and Content"
                     android:layout_gravity="center"
-                    android:textSize="30dp"/>
+                    android:singleLine="false"
+                    android:maxLines="4"
+                    android:textSize="15dp"/>
                 <Spinner
                     android:layout_width="wrap_content"
                     android:layout_height="match_parent"
@@ -41,20 +41,23 @@
                     android:entries="@array/marking"
                     android:background="@drawable/round_bg"
                     android:paddingHorizontal="20dp"
-                    android:id="@+id/acuity"
+                    android:id="@+id/cptr1"
                     />
             </LinearLayout>
             <LinearLayout
-                android:layout_marginVertical="25dp"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:layout_marginTop="50dp"
+                android:layout_marginBottom="25dp"
                 android:orientation="horizontal">
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="match_parent"
+                    android:singleLine="false"
+                    android:maxLines="4"
+                    android:text="Organization of presentation"
                     android:layout_gravity="center"
-                    android:text="Pupils"
-                    android:textSize="30dp"/>
+                    android:textSize="15dp"/>
                 <Spinner
                     android:layout_width="wrap_content"
                     android:layout_height="match_parent"
@@ -62,65 +65,71 @@
                     android:entries="@array/marking"
                     android:background="@drawable/round_bg"
                     android:paddingHorizontal="20dp"
-                    android:id="@+id/pupils"
+                    android:id="@+id/cptr2"
                     />
-
             </LinearLayout>
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginVertical="25dp"
+                android:layout_marginTop="50dp"
+                android:layout_marginBottom="25dp"
                 android:orientation="horizontal">
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="match_parent"
-                    android:text="Visual Field"
-                    android:textAlignment="center"
-
+                    android:text="Accuracy of Gen. \n physical/ocular examination"
                     android:layout_gravity="center"
-                    android:textSize="30dp"/>
+                    android:singleLine="false"
+                    android:maxLines="4"
+                    android:textSize="15dp"/>
                 <Spinner
                     android:layout_width="wrap_content"
                     android:layout_height="match_parent"
                     android:layout_marginLeft="15dp"
+                    android:entries="@array/marking"
                     android:background="@drawable/round_bg"
                     android:paddingHorizontal="20dp"
-                    android:entries="@array/marking"
-                    android:id="@+id/field"
+                    android:id="@+id/cptr3"
                     />
             </LinearLayout>
             <LinearLayout
                 android:layout_width="match_parent"
-                android:layout_marginVertical="25dp"
                 android:layout_height="wrap_content"
+                android:layout_marginTop="50dp"
+                android:layout_marginBottom="25dp"
                 android:orientation="horizontal">
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="match_parent"
-                    android:text="Motility"
+                    android:text="Appropriate Investigations"
                     android:layout_gravity="center"
-                    android:textSize="30dp"/>
+                    android:singleLine="false"
+                    android:maxLines="4"
+                    android:textSize="15dp"/>
                 <Spinner
                     android:layout_width="wrap_content"
                     android:layout_height="match_parent"
-                    android:background="@drawable/round_bg"
-                    android:paddingHorizontal="20dp"
                     android:layout_marginLeft="15dp"
                     android:entries="@array/marking"
-                    android:id="@+id/motility"
+                    android:background="@drawable/round_bg"
+                    android:paddingHorizontal="20dp"
+                    android:id="@+id/cptr4"
                     />
             </LinearLayout>
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginVertical="25dp"
+                android:layout_marginTop="50dp"
+                android:layout_marginBottom="25dp"
                 android:orientation="horizontal">
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="match_parent"
-                    android:text="External"
+                    android:singleLine="false"
+                    android:maxLines="4"
+                    android:text="Knowledge of subject"
                     android:layout_gravity="center"
-                    android:textSize="30dp"/>
+                    android:textSize="15dp"/>
                 <Spinner
                     android:layout_width="wrap_content"
                     android:layout_height="match_parent"
@@ -128,76 +137,85 @@
                     android:entries="@array/marking"
                     android:background="@drawable/round_bg"
                     android:paddingHorizontal="20dp"
-                    android:id="@+id/external"
-                    />
-
-            </LinearLayout>
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:orientation="horizontal"
-                android:layout_marginVertical="25dp">
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="match_parent"
-                    android:layout_gravity="center"
-                    android:textAlignment="center"
-                    android:text="SLE"
-                    android:textSize="30dp"/>
-                <Spinner
-                    android:layout_width="wrap_content"
-                    android:layout_height="match_parent"
-                    android:background="@drawable/round_bg"
-                    android:paddingHorizontal="20dp"
-                    android:layout_marginLeft="15dp"
-                    android:entries="@array/marking"
-                    android:id="@+id/sle"
+                    android:id="@+id/cptr5"
                     />
             </LinearLayout>
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:orientation="horizontal"
-                android:layout_marginVertical="25dp">
+                android:layout_marginTop="50dp"
+                android:layout_marginBottom="25dp"
+                android:orientation="horizontal">
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="match_parent"
+                    android:singleLine="false"
+                    android:maxLines="4"
+                    android:text="Relevant publications or \n cross reference referred"
                     android:layout_gravity="center"
-                    android:textAlignment="center"
-                    android:text="IOP"
-                    android:textSize="30dp"/>
+                    android:textSize="15dp"/>
                 <Spinner
                     android:layout_width="wrap_content"
                     android:layout_height="match_parent"
-                    android:background="@drawable/round_bg"
-                    android:paddingHorizontal="20dp"
                     android:layout_marginLeft="15dp"
                     android:entries="@array/marking"
-                    android:id="@+id/iop"
+                    android:background="@drawable/round_bg"
+                    android:paddingHorizontal="20dp"
+                    android:id="@+id/cptr6"
                     />
             </LinearLayout>
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:orientation="horizontal"
-                android:layout_marginVertical="25dp">
+                android:layout_marginTop="50dp"
+                android:layout_marginBottom="25dp"
+                android:orientation="horizontal">
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="match_parent"
+                    android:singleLine="false"
+                    android:maxLines="4"
+                    android:text="Images/Videos"
                     android:layout_gravity="center"
-                    android:textAlignment="center"
-                    android:text="Fundus"
-                    android:textSize="30dp"/>
+                    android:textSize="15dp"/>
                 <Spinner
                     android:layout_width="wrap_content"
                     android:layout_height="match_parent"
-                    android:background="@drawable/round_bg"
-                    android:paddingHorizontal="20dp"
                     android:layout_marginLeft="15dp"
                     android:entries="@array/marking"
-                    android:id="@+id/fundus"
+                    android:background="@drawable/round_bg"
+                    android:paddingHorizontal="20dp"
+                    android:id="@+id/cptr7"
                     />
             </LinearLayout>
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="50dp"
+                android:layout_marginBottom="25dp"
+                android:orientation="horizontal">
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:singleLine="false"
+                    android:maxLines="4"
+                    android:text="Resident presents information \n in a logical sequence"
+                    android:layout_gravity="center"
+                    android:textSize="15dp"/>
+                <Spinner
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_marginLeft="15dp"
+                    android:entries="@array/marking"
+                    android:background="@drawable/round_bg"
+                    android:paddingHorizontal="20dp"
+                    android:id="@+id/cptr8"
+                    />
+            </LinearLayout>
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Remarks:(If any)"/>
             <EditText
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -205,17 +223,47 @@
                 android:textSize="20sp"
                 android:hint="Comment if the score is less than 2"
                 android:paddingHorizontal="10dp"
-                android:id="@+id/commentexam"/>
-
+                android:id="@+id/commentcptr"/>
+            <GridLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:rowCount="1"
+                android:layout_marginHorizontal="10dp"
+                android:layout_marginVertical="10dp"
+                android:orientation="horizontal"
+                android:columnCount="4">
+                <ImageButton
+                    android:src="@drawable/unhappy_red"
+                    android:id="@+id/cptrunhappy"
+                    android:layout_margin="10dp"
+                    android:background="#ffffff"/>
+                <ImageButton
+                    android:src="@drawable/neutral_red"
+                    android:layout_margin="10dp"
+                    android:id="@+id/cptrneutral"
+                    android:background="#ffffff"/>
+                <ImageButton
+                    android:src="@drawable/happy_red"
+                    android:layout_margin="10dp"
+                    android:id="@+id/cptrhappy"
+                    android:background="#ffffff"/>
+                <ImageButton
+                    android:src="@drawable/vhappy_red"
+                    android:layout_margin="10dp"
+                    android:id="@+id/cptrvhappy"
+                    android:background="#ffffff"/>
+            </GridLayout>
             <Button
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:background="@drawable/round_bg"
                 android:layout_gravity="center"
-                android:id="@+id/submit_report3"
+                android:id="@+id/cptr_submit"
                 android:text="Submit"
                 android:padding="20dp"/>
+
         </LinearLayout>
     </ScrollView>
 
-</RelativeLayout>
+</android.support.constraint.ConstraintLayout>

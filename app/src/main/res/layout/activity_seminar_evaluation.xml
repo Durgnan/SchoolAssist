@@ -1,12 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:background="@drawable/bg_gradient"
     android:layout_height="match_parent"
-    tools:context=".Stram">
+    android:background="@drawable/bg_gradient"
+    tools:context=".SeminarEvaluation">
+
     <ScrollView
         android:layout_width="match_parent"
         android:layout_height="match_parent">
@@ -18,8 +17,8 @@
                 android:layout_width="50dp"
                 android:layout_gravity="right"
                 android:layout_margin="5dp"
-                android:id="@+id/stramimg"
                 android:background="@drawable/round_bg"
+                android:id="@+id/seimg"
                 android:src="@drawable/help"
                 android:layout_height="50dp" />
             <LinearLayout
@@ -31,7 +30,7 @@
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="match_parent"
-                    android:text="Draping"
+                    android:text="Knowledge and Content"
                     android:layout_gravity="center"
                     android:singleLine="false"
                     android:maxLines="4"
@@ -43,7 +42,7 @@
                     android:entries="@array/marking"
                     android:background="@drawable/round_bg"
                     android:paddingHorizontal="20dp"
-                    android:id="@+id/stram1"
+                    android:id="@+id/se1"
                     />
             </LinearLayout>
             <LinearLayout
@@ -57,7 +56,7 @@
                     android:layout_height="match_parent"
                     android:singleLine="false"
                     android:maxLines="4"
-                    android:text="Forced duction test"
+                    android:text="Organization of presentation"
                     android:layout_gravity="center"
                     android:textSize="15dp"/>
                 <Spinner
@@ -67,7 +66,7 @@
                     android:entries="@array/marking"
                     android:background="@drawable/round_bg"
                     android:paddingHorizontal="20dp"
-                    android:id="@+id/stram2"
+                    android:id="@+id/se2"
                     />
             </LinearLayout>
             <LinearLayout
@@ -79,7 +78,7 @@
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="match_parent"
-                    android:text="Globe stabilization"
+                    android:text="Background content"
                     android:layout_gravity="center"
                     android:singleLine="false"
                     android:maxLines="4"
@@ -91,7 +90,7 @@
                     android:entries="@array/marking"
                     android:background="@drawable/round_bg"
                     android:paddingHorizontal="20dp"
-                    android:id="@+id/stram3"
+                    android:id="@+id/se3"
                     />
             </LinearLayout>
             <LinearLayout
@@ -103,7 +102,7 @@
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="match_parent"
-                    android:text="Conjunctival incision &amp; \n Tenon’s dissection"
+                    android:text="Knowledge of subject"
                     android:layout_gravity="center"
                     android:singleLine="false"
                     android:maxLines="4"
@@ -115,31 +114,7 @@
                     android:entries="@array/marking"
                     android:background="@drawable/round_bg"
                     android:paddingHorizontal="20dp"
-                    android:id="@+id/stram4"
-                    />
-            </LinearLayout>
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="50dp"
-                android:layout_marginBottom="25dp"
-                android:orientation="horizontal">
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="match_parent"
-                    android:singleLine="false"
-                    android:maxLines="4"
-                    android:text="Hooking rectus muscle"
-                    android:layout_gravity="center"
-                    android:textSize="15dp"/>
-                <Spinner
-                    android:layout_width="wrap_content"
-                    android:layout_height="match_parent"
-                    android:layout_marginLeft="15dp"
-                    android:entries="@array/marking"
-                    android:background="@drawable/round_bg"
-                    android:paddingHorizontal="20dp"
-                    android:id="@+id/stram5"
+                    android:id="@+id/se4"
                     />
             </LinearLayout>
             <LinearLayout
@@ -153,7 +128,7 @@
                     android:layout_height="match_parent"
                     android:singleLine="false"
                     android:maxLines="4"
-                    android:text="Exposure of rectus muscle"
+                    android:text="Relevant publications or \n cross references referred"
                     android:layout_gravity="center"
                     android:textSize="15dp"/>
                 <Spinner
@@ -163,7 +138,7 @@
                     android:entries="@array/marking"
                     android:background="@drawable/round_bg"
                     android:paddingHorizontal="20dp"
-                    android:id="@+id/stram6"
+                    android:id="@+id/se5"
                     />
             </LinearLayout>
             <LinearLayout
@@ -177,7 +152,7 @@
                     android:layout_height="match_parent"
                     android:singleLine="false"
                     android:maxLines="4"
-                    android:text="Placement of suture in muscle"
+                    android:text="Presentation Skills"
                     android:layout_gravity="center"
                     android:textSize="15dp"/>
                 <Spinner
@@ -187,7 +162,7 @@
                     android:entries="@array/marking"
                     android:background="@drawable/round_bg"
                     android:paddingHorizontal="20dp"
-                    android:id="@+id/stram7"
+                    android:id="@+id/se6"
                     />
             </LinearLayout>
             <LinearLayout
@@ -201,7 +176,7 @@
                     android:layout_height="match_parent"
                     android:singleLine="false"
                     android:maxLines="4"
-                    android:text="Disinsertion of rectus muscle"
+                    android:text="Graphics (use of PowerPoint)"
                     android:layout_gravity="center"
                     android:textSize="15dp"/>
                 <Spinner
@@ -211,103 +186,7 @@
                     android:entries="@array/marking"
                     android:background="@drawable/round_bg"
                     android:paddingHorizontal="20dp"
-                    android:id="@+id/stram8"
-                    />
-            </LinearLayout>
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="50dp"
-                android:layout_marginBottom="25dp"
-                android:orientation="horizontal">
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="match_parent"
-                    android:text="Use of caliper/scleral ruler"
-                    android:layout_gravity="center"
-                    android:singleLine="false"
-                    android:maxLines="4"
-                    android:textSize="15dp"/>
-                <Spinner
-                    android:layout_width="wrap_content"
-                    android:layout_height="match_parent"
-                    android:layout_marginLeft="15dp"
-                    android:entries="@array/marking"
-                    android:background="@drawable/round_bg"
-                    android:paddingHorizontal="20dp"
-                    android:id="@+id/stram9"
-                    />
-            </LinearLayout>
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="50dp"
-                android:layout_marginBottom="25dp"
-                android:orientation="horizontal">
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="match_parent"
-                    android:text="Reattachment of muscle"
-                    android:layout_gravity="center"
-                    android:singleLine="false"
-                    android:maxLines="4"
-                    android:textSize="15dp"/>
-                <Spinner
-                    android:layout_width="wrap_content"
-                    android:layout_height="match_parent"
-                    android:layout_marginLeft="15dp"
-                    android:entries="@array/marking"
-                    android:background="@drawable/round_bg"
-                    android:paddingHorizontal="20dp"
-                    android:id="@+id/stram10"
-                    />
-            </LinearLayout>
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="50dp"
-                android:layout_marginBottom="25dp"
-                android:orientation="horizontal">
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="match_parent"
-                    android:text="Conjunctival closure"
-                    android:layout_gravity="center"
-                    android:singleLine="false"
-                    android:maxLines="4"
-                    android:textSize="15dp"/>
-                <Spinner
-                    android:layout_width="wrap_content"
-                    android:layout_height="match_parent"
-                    android:layout_marginLeft="15dp"
-                    android:entries="@array/marking"
-                    android:background="@drawable/round_bg"
-                    android:paddingHorizontal="20dp"
-                    android:id="@+id/stram11"
-                    />
-            </LinearLayout>
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="50dp"
-                android:layout_marginBottom="25dp"
-                android:orientation="horizontal">
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="match_parent"
-                    android:text="Maintaining hemostasis"
-                    android:layout_gravity="center"
-                    android:singleLine="false"
-                    android:maxLines="4"
-                    android:textSize="15dp"/>
-                <Spinner
-                    android:layout_width="wrap_content"
-                    android:layout_height="match_parent"
-                    android:layout_marginLeft="15dp"
-                    android:entries="@array/marking"
-                    android:background="@drawable/round_bg"
-                    android:paddingHorizontal="20dp"
-                    android:id="@+id/stram12"
+                    android:id="@+id/se7"
                     />
             </LinearLayout>
             <LinearLayout
@@ -321,7 +200,7 @@
                     android:layout_height="match_parent"
                     android:singleLine="false"
                     android:maxLines="4"
-                    android:text="Tissue Handling"
+                    android:text="Eye Contact"
                     android:layout_gravity="center"
                     android:textSize="15dp"/>
                 <Spinner
@@ -331,7 +210,7 @@
                     android:entries="@array/marking"
                     android:background="@drawable/round_bg"
                     android:paddingHorizontal="20dp"
-                    android:id="@+id/stram13"
+                    android:id="@+id/se8"
                     />
             </LinearLayout>
             <LinearLayout
@@ -341,81 +220,9 @@
                 android:layout_marginBottom="25dp"
                 android:orientation="horizontal">
                 <TextView
+                    android:text="Professionalism and Confidence"
                     android:layout_width="wrap_content"
                     android:layout_height="match_parent"
-                    android:singleLine="false"
-                    android:maxLines="4"
-                    android:text="Knowledge of instruments"
-                    android:layout_gravity="center"
-                    android:textSize="15dp"/>
-                <Spinner
-                    android:layout_width="wrap_content"
-                    android:layout_height="match_parent"
-                    android:layout_marginLeft="15dp"
-                    android:entries="@array/marking"
-                    android:background="@drawable/round_bg"
-                    android:paddingHorizontal="20dp"
-                    android:id="@+id/stram14"
-                    />
-            </LinearLayout>
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="50dp"
-                android:layout_marginBottom="25dp"
-                android:orientation="horizontal">
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="match_parent"
-                    android:singleLine="false"
-                    android:maxLines="4"
-                    android:text="Technique of holding \n suture needle in needle holde"
-                    android:layout_gravity="center"
-                    android:textSize="15dp"/>
-                <Spinner
-                    android:layout_width="wrap_content"
-                    android:layout_height="match_parent"
-                    android:layout_marginLeft="15dp"
-                    android:entries="@array/marking"
-                    android:background="@drawable/round_bg"
-                    android:paddingHorizontal="20dp"
-                    android:id="@+id/stram15"
-                    />
-            </LinearLayout>
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="50dp"
-                android:layout_marginBottom="25dp"
-                android:orientation="horizontal">
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="match_parent"
-                    android:singleLine="false"
-                    android:maxLines="4"
-                    android:text="Technique of surgical \n knot tying"
-                    android:layout_gravity="center"
-                    android:textSize="15dp"/>
-                <Spinner
-                    android:layout_width="wrap_content"
-                    android:layout_height="match_parent"
-                    android:layout_marginLeft="15dp"
-                    android:entries="@array/marking"
-                    android:background="@drawable/round_bg"
-                    android:paddingHorizontal="20dp"
-                    android:id="@+id/stram16"
-                    />
-            </LinearLayout>
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="50dp"
-                android:layout_marginBottom="25dp"
-                android:orientation="horizontal">
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="match_parent"
-                    android:text="Communication with surgical team"
                     android:layout_gravity="center"
                     android:singleLine="false"
                     android:maxLines="4"
@@ -427,9 +234,37 @@
                     android:entries="@array/marking"
                     android:background="@drawable/round_bg"
                     android:paddingHorizontal="20dp"
-                    android:id="@+id/stram17"
+                    android:id="@+id/se9"
                     />
             </LinearLayout>
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="50dp"
+                android:layout_marginBottom="25dp"
+                android:orientation="horizontal">
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:text="Communication"
+                    android:layout_gravity="center"
+                    android:singleLine="false"
+                    android:maxLines="4"
+                    android:textSize="15dp"/>
+                <Spinner
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_marginLeft="15dp"
+                    android:entries="@array/marking"
+                    android:background="@drawable/round_bg"
+                    android:paddingHorizontal="20dp"
+                    android:id="@+id/se10"
+                    />
+            </LinearLayout>
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Remarks:(If any)"/>
             <EditText
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -437,16 +272,46 @@
                 android:textSize="20sp"
                 android:hint="Comment if the score is less than 2"
                 android:paddingHorizontal="10dp"
-                android:id="@+id/commentstram"/>
+                android:id="@+id/commentse"/>
+            <GridLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:rowCount="1"
+                android:layout_marginHorizontal="10dp"
+                android:layout_marginVertical="10dp"
+                android:orientation="horizontal"
+                android:columnCount="4">
+                <ImageButton
+                    android:src="@drawable/unhappy_red"
+                    android:id="@+id/seunhappy"
+                    android:layout_margin="10dp"
+                    android:background="#ffffff"/>
+                <ImageButton
+                    android:src="@drawable/neutral_red"
+                    android:layout_margin="10dp"
+                    android:id="@+id/seneutral"
+                    android:background="#ffffff"/>
+                <ImageButton
+                    android:src="@drawable/happy_red"
+                    android:layout_margin="10dp"
+                    android:id="@+id/sehappy"
+                    android:background="#ffffff"/>
+                <ImageButton
+                    android:src="@drawable/vhappy_red"
+                    android:layout_margin="10dp"
+                    android:id="@+id/sevhappy"
+                    android:background="#ffffff"/>
+            </GridLayout>
             <Button
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:background="@drawable/round_bg"
                 android:layout_gravity="center"
-                android:id="@+id/stram_submit"
+                android:id="@+id/se_submit"
                 android:text="Submit"
                 android:padding="20dp"/>
 
         </LinearLayout>
     </ScrollView>
-</RelativeLayout>
+</android.support.constraint.ConstraintLayout>

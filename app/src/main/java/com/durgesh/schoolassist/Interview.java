@@ -76,20 +76,7 @@ public class Interview extends AppCompatActivity implements View.OnClickListener
         imageButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                AlertDialog.Builder builder = new AlertDialog.Builder(getApplicationContext());
-                builder.setMessage(" Novice (score=2)\n Beginner (score=3) \n Advanced Beginner (score=4)\n Competent (score=5)")
-                        .setCancelable(false)
-                        .setPositiveButton("OK", new DialogInterface.OnClickListener() {
-                            public void onClick(DialogInterface dialog, int id) {
-
-
-                            }
-                        });
-
-                AlertDialog alert = builder.create();
-                //Setting the title manually
-                alert.setTitle("Info");
-                alert.show();
+                startActivity(new Intent(Interview.this,Pop.class));
             }
         });
         addItemsOnSpinner();

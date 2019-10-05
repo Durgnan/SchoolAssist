@@ -155,9 +155,9 @@
             </LinearLayout>
             <EditText
                 android:layout_width="match_parent"
-                android:layout_height="25dp"
+                android:layout_height="wrap_content"
                 android:layout_marginVertical="15dp"
-                android:textSize="25sp"
+                android:textSize="20sp"
                 android:hint="Comment if the score is less than 2"
                 android:paddingHorizontal="10dp"
                 android:id="@+id/commentpersonal"/>

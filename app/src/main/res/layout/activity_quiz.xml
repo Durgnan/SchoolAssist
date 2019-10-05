@@ -1,16 +1,42 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
+    android:background="@drawable/bg_gradient"
     android:layout_height="match_parent"
     tools:context=".QuizActivity">
-    <ImageView
+    <LinearLayout
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_centerInParent="true"
-        android:src="@drawable/advertisement"
-        />
-
+        android:orientation="vertical">
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginVertical="25dp"
+            android:padding="30dp"
+            android:id="@+id/quiz_seminar"
+            android:background="@drawable/round_bg"
+            android:text="SEMINAR EVALUATION"/>
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginVertical="25dp"
+            android:padding="30dp"
+            android:id="@+id/quiz_club"
+            android:background="@drawable/round_bg"
+            android:layout_gravity="center"
+            android:text="journal club"/>
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginVertical="25dp"
+            android:padding="30dp"
+            android:id="@+id/quiz_case"
+            android:layout_gravity="center"
+            android:background="@drawable/round_bg"
+            android:text="case presentation"/>
+    </LinearLayout>
 
 </RelativeLayout>
