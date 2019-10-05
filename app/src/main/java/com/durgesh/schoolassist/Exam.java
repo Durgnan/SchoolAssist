@@ -143,6 +143,11 @@ public class Exam extends AppCompatActivity implements View.OnClickListener {
 
                         //Add The Values to database
                         ParseObject registerObject = new ParseObject("Exam");
+                        EditText editText=findViewById(R.id.commentexam);
+                        if(editText.getText().toString().trim()==null ||editText.getText().toString().trim()=="")
+                            registerObject.put("comments","");
+                        else
+                            registerObject.put("comments",editText.getText().toString().trim());
                         registerObject.put("username", username);
                         registerObject.put("VisualAcuity",text1);
                         registerObject.put("Pupils",text2);

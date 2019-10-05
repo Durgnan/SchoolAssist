@@ -134,6 +134,11 @@ public class Interview extends AppCompatActivity implements View.OnClickListener
                         //Add The Values to database
                         ParseObject registerObject = new ParseObject("InterviewSkills");
                         registerObject.put("username", username);
+                        EditText editText=findViewById(R.id.commentview);
+                        if(editText.getText().toString().trim()==null ||editText.getText().toString().trim()=="")
+                            registerObject.put("comments","");
+                        else
+                            registerObject.put("comments",editText.getText().toString().trim());
                         registerObject.put("Respectful",text1);
                         registerObject.put("Understandable",text2);
                         registerObject.put("ExplainedFindings",text3);

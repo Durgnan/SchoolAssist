@@ -133,6 +133,11 @@ public class OPDClinicalActivity extends AppCompatActivity implements View.OnCli
                     public void onClick(DialogInterface dialog, int id) {
                         //Add The Values to database
                         ParseObject registerObject = new ParseObject("OPDClinical");
+                        EditText editText=findViewById(R.id.commentopdc);
+                        if(editText.getText().toString().trim()==null ||editText.getText().toString().trim()=="")
+                            registerObject.put("comments","");
+                        else
+                            registerObject.put("comments",editText.getText().toString().trim());
                         registerObject.put("username", username);
                         registerObject.put("Anterior_Segment_Posterior_Segment_Examination",text1);
                         registerObject.put("Interpretation_of_Signs",text2);

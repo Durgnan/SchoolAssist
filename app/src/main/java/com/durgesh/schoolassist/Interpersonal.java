@@ -134,6 +134,11 @@ public class Interpersonal extends AppCompatActivity implements View.OnClickList
                     public void onClick(DialogInterface dialog, int id) {
                         //Add The Values to database
                         ParseObject registerObject = new ParseObject("InterpersonalSkills");
+                        EditText editText=findViewById(R.id.commentpersonal);
+                        if(editText.getText().toString().trim()==null ||editText.getText().toString().trim()=="")
+                            registerObject.put("comments","");
+                        else
+                            registerObject.put("comments",editText.getText().toString().trim());
                         registerObject.put("username", username);
                         registerObject.put("Respectful",text1);
                         registerObject.put("Understandable",text2);

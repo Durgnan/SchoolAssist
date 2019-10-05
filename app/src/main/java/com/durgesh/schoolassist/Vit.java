@@ -11,6 +11,7 @@ import android.view.MenuItem;
 import android.view.View;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
+import android.widget.EditText;
 import android.widget.ImageButton;
 import android.widget.Spinner;
 import android.widget.Toast;
@@ -159,6 +160,11 @@ public class Vit extends AppCompatActivity implements View.OnClickListener{
                         ParseObject registerObject = new ParseObject("Vitrectomy");
                         registerObject.put("username", username);
                         JSONArray array = new JSONArray(list);
+                        EditText editText=findViewById(R.id.commentvit);
+                        if(editText.getText().toString().trim()==null ||editText.getText().toString().trim()=="")
+                            registerObject.put("comments","");
+                        else
+                            registerObject.put("comments",editText.getText().toString().trim());
                         registerObject.put("Score",array);
                         registerObject.saveInBackground(new SaveCallback() {
                             @Override

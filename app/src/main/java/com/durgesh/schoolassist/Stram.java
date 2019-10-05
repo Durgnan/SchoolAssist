@@ -11,6 +11,7 @@ import android.view.MenuItem;
 import android.view.View;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
+import android.widget.EditText;
 import android.widget.ImageButton;
 import android.widget.Spinner;
 import android.widget.Toast;
@@ -154,6 +155,11 @@ public class Stram extends AppCompatActivity implements View.OnClickListener{
                         //Add The Values to database
                         ParseObject registerObject = new ParseObject("Strabismus");
                         registerObject.put("username", username);
+                        EditText editText=findViewById(R.id.commentstram);
+                        if(editText.getText().toString().trim()==null ||editText.getText().toString().trim()=="")
+                            registerObject.put("comments","");
+                        else
+                            registerObject.put("comments",editText.getText().toString().trim());
                         JSONArray array = new JSONArray(list);
                         registerObject.put("Score",array);
                         registerObject.saveInBackground(new SaveCallback() {

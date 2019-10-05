@@ -31,6 +31,8 @@ public class CasePresentation extends AppCompatActivity implements View.OnClickL
     String text1,text2,text3,text4,text5,text6;
     Button button;
 
+
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -73,6 +75,7 @@ public class CasePresentation extends AppCompatActivity implements View.OnClickL
         input4=findViewById(R.id.differential);
         input5=findViewById(R.id.appropriate);
         input6=findViewById(R.id.response);
+
         ImageButton imageButton=findViewById(R.id.caseimg);
         imageButton.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -133,8 +136,16 @@ public class CasePresentation extends AppCompatActivity implements View.OnClickL
                 .setCancelable(false)
                 .setPositiveButton("Yes", new DialogInterface.OnClickListener() {
                     public void onClick(DialogInterface dialog, int id) {
+
                         //Add The Values to database
                         ParseObject registerObject = new ParseObject("CasePresentation");
+                        EditText editText=findViewById(R.id.commentcase);
+                        if(editText.getText().toString().trim()==null ||editText.getText().toString().trim()=="")
+                            registerObject.put("comments","");
+                        else
+                            registerObject.put("comments",editText.getText().toString().trim());
+
+
                         registerObject.put("username", username);
                         registerObject.put("Concise_Clarity",text1);
                         registerObject.put("PertinentFacts",text2);

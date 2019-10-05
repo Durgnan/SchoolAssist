@@ -198,6 +198,14 @@
                     android:id="@+id/fundus"
                     />
             </LinearLayout>
+            <EditText
+                android:layout_width="match_parent"
+                android:layout_height="25dp"
+                android:layout_marginVertical="15dp"
+                android:textSize="25sp"
+                android:hint="Comment if the score is less than 2"
+                android:paddingHorizontal="10dp"
+                android:id="@+id/commentexam"/>
 
             <Button
                 android:layout_width="wrap_content"

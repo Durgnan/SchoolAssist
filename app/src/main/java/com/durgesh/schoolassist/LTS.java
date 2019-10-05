@@ -11,6 +11,7 @@ import android.view.MenuItem;
 import android.view.View;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
+import android.widget.EditText;
 import android.widget.ImageButton;
 import android.widget.Spinner;
 import android.widget.Toast;
@@ -185,6 +186,11 @@ public class LTS extends AppCompatActivity implements View.OnClickListener {
                         //Add The Values to database
                         ParseObject registerObject = new ParseObject("LTS");
                         registerObject.put("username", username);
+                        EditText editText=findViewById(R.id.commentlts);
+                        if(editText.getText().toString().trim()==null ||editText.getText().toString().trim()=="")
+                            registerObject.put("comments","");
+                        else
+                            registerObject.put("comments",editText.getText().toString().trim());
                         registerObject.put("Topic1",text1);
                         registerObject.put("Topic2",text2);
                         registerObject.put("Topic3",text3);
